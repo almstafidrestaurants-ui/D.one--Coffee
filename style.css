@@ -1,0 +1,788 @@
+@font-face{
+    font-family: 'Sultan Bold';
+    src: url('fonts/Sultan Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root{
+
+--gold:#c28b54;
+--gold-light:#d8a16f;
+--gold-dark:#6e4a2c;
+--gold-shadow:rgba(194,139,84,.15);
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background:#050505;
+    max-width:430px;
+    margin:auto;
+    color:white;
+    overflow-x:hidden;
+ font-family: 'Cairo', sans-serif;
+    font-weight: 500;
+}
+
+
+.phone-container{
+
+    width:100%;
+    max-width:390px;
+    min-height:100vh;
+
+    background:#050505;
+
+    margin:auto;
+
+    overflow:hidden;
+
+    border:1px solid rgba(194,139,84,.25);
+
+    border-radius:28px;
+
+    box-shadow:
+    0 0 0 1px rgba(216,161,111,.05),
+    inset 0 0 30px rgba(194,139,84,.03);
+}
+
+.header{
+
+    height:85px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 18px;
+}
+
+.logo img{
+
+    width:130px;
+
+    height: auto;
+
+    object-fit:contain;
+}
+
+.menu-text{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.menu-text h2{
+    color:white;
+    font-size:23px;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+.menu-line{
+
+width:80px;
+
+height:3px;
+
+background:linear-gradient(
+90deg,
+#6e4a2c,
+#d8a16f,
+#6e4a2c
+);
+
+border-radius:50px;
+
+box-shadow:
+0 0 10px rgba(216,161,111,.25);
+
+}
+
+.section-line{
+
+width:95%;
+
+height:1px;
+
+margin:8px auto 20px;
+
+background:rgba(194,139,84,.25);
+
+}
+/*========== HERO ==========*/
+
+.hero{
+
+    padding:0 15px ;
+    margin-top: -15px;
+}
+
+.hero img{
+
+    width:100%;
+
+    border-radius:25px;
+
+    border:1px solid rgba(194,139,84,.3);
+
+    box-shadow:0 0 15px rgba(194,139,84,.08);
+}
+
+/*======================================================الاقسام لي تحت صورة الكبيري=================================*/
+/* ================================= MENU SECTION ================================= */
+
+.menu-section{
+
+  padding: 0px 18px 10px;
+}
+
+.menu-title{
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  margin-bottom: 18px;
+
+    position: relative;
+
+  width: fit-content;
+}
+
+.menu-title::after{
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -6px;
+
+  width: 100%;
+
+  height: 3px;
+
+  background: #6e4a2c;
+
+  border-radius: 10px;
+}
+
+/* الشريط */
+
+/* ================= CATEGORIES ================= */
+
+.categories-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    padding:25px 10px;
+
+    background:#0a0a0a;
+
+    border:1px solid rgba(194,139,84,.28);
+
+    border-radius:28px;
+
+    margin-bottom:25px;
+
+}
+
+.category-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.category-item i{
+
+    font-size:32px;
+
+    color:#c28b54;
+
+    margin-bottom:12px;
+}
+
+.category-item span{
+
+    color:white;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    line-height:1.5;
+}
+
+.category-item.active i,
+.category-item.active span{
+
+    color:#d8a16f;
+}
+
+.category-item:active{
+
+    transform:scale(.9);
+}
+/* ================= MENU GRID ================= */
+.menu-grid{
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 16px !important;
+
+
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+background:#0a0a0a;
+
+border-radius:22px;
+
+overflow:hidden;
+
+border:1px solid rgba(194,139,84,.28);
+
+box-shadow:
+
+0 0 0 1px rgba(255,255,255,.02),
+
+0 0 10px rgba(194,139,84,.08);
+
+position:relative;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:6px;
+left:6px;
+right:6px;
+bottom:6px;
+
+border-radius:18px;
+
+border:1px solid rgba(194,139,84,.12);
+
+pointer-events:none;
+
+}
+
+.card:hover{
+
+border-color:rgba(216,161,111,.5);
+
+box-shadow:
+
+0 0 18px rgba(194,139,84,.15);
+
+}
+
+.gold-line{
+
+width:100%;
+
+height:1px;
+
+margin:20px 0;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(194,139,84,.7),
+transparent
+);
+
+}
+
+.card.show{
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+@keyframes fadeIn{
+
+  from{
+
+    opacity: 0;
+
+    transform: translateY(10px);
+  }
+
+  to{
+
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+.card img{
+
+  width: 100%;
+
+  height: 95px;
+
+  object-fit: cover;
+
+  padding: 3px;
+
+  border-radius: 16px;
+}
+
+.card-content{
+
+  padding: 8px;
+
+  padding-bottom: 8px;
+}
+
+.card-content h3{
+
+  color: white;
+
+  font-size: 12px;
+
+  margin-bottom: 6px;
+
+  font-weight: 500;
+  
+  min-height: 28px;
+
+line-height: 1.3;
+}
+
+.card-content p{
+
+  color: #a1a1a1;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  margin-bottom: 10px;
+}
+
+.card-content span{
+
+  color: #6e4a2c;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+.card:hover{
+
+  transform: scale(1);
+
+  border-color: rgba(194,139,84,.15);
+}
+.card:active{
+
+  border-color: rgba(194,139,84,.15);
+
+  box-shadow: 0 0 18px rgba(194,139,84,.15);
+  
+  transform: scale(0.93);
+}
+
+.special-section{
+
+padding:20px 0;
+
+}
+
+.section-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.section-header h2{
+
+color:#c28b54;
+
+font-size:22px;
+
+letter-spacing:2px;
+
+}
+
+
+.special-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.special-card{
+
+background:#090909;
+
+border:1px solid rgba(194,139,84,.25);
+
+border-radius:25px;
+
+overflow:hidden;
+
+position:relative;
+
+padding:6px;
+
+}
+
+.special-card::before{
+
+content:"";
+
+position:absolute;
+
+top:6px;
+left:6px;
+right:6px;
+bottom:6px;
+
+border-radius:22px;
+
+border:1px solid rgba(194,139,84,.15);
+
+pointer-events:none;
+
+}
+
+.special-card img{
+
+width:100%;
+
+height:120px;
+
+object-fit:cover;
+
+border-radius:18px;
+
+}
+
+.new-badge{
+
+position:absolute;
+
+top:20px;
+
+left:20px;
+
+width:40px;
+
+height:40px;
+
+border-radius:50%;
+
+border:1px solid rgba(194,139,84,.4);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:12px;
+
+color:#e1b07a;
+
+background:#090909;
+
+}
+
+.special-content{
+
+padding:15px 10px;
+
+}
+
+.special-content h3{
+
+font-size:14px;
+
+line-height: 1.4;
+
+color:#e2c29d;
+
+margin-bottom:8px;
+
+}
+
+
+.special-content p{
+
+font-size:11px;
+
+line-height:1.5;
+
+color:#b5b5b5;
+
+margin-bottom:10px;
+
+}
+
+.bottom-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.bottom-row span{
+
+font-size:30px;
+
+font-weight:700;
+
+color:#c28b54;
+
+}
+
+.price{
+
+    font-size:16px;
+
+    color:#c28b54;
+
+    font-weight:700;
+
+}
+
+.plus-btn{
+
+width:37px;
+
+height:37px;
+
+border-radius:50%;
+
+background:transparent;
+
+border:1px solid rgba(194,139,84,.3);
+
+color:#c28b54;
+
+font-size:15px;
+
+}
+
+
+
+/* ============================================================================
+   MODAL
+================================================================================== */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  display:none;
+  justify-content:center;
+  align-items:flex-start;
+  overflow-y:auto;
+  z-index:999;
+  padding:20px 12px;
+}
+
+.modal-content{
+  width:100%;
+
+  max-width:340px;
+
+  background:linear-gradient(to bottom,#1a110d,#120c09);
+
+  border-radius:24px;
+
+  padding:18px;
+
+  position:relative;
+
+  margin-top:80px;
+
+  margin-bottom:30px;
+
+  animation:popup 0.3s ease;
+}
+@keyframes popup{
+  from{
+    transform:scale(0.7);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.close{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:35px;
+  cursor:pointer;
+  color:white;
+}
+
+.modal-content h2{
+  text-align:center;
+  margin-bottom:25px;
+ font-family: 'Cairo', sans-serif;
+  font-size:22px;
+}
+
+.modal-items{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+
+.drink-card{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  background:#211613;
+
+  border-radius:18px;
+
+  padding:12px;
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  margin-bottom:14px;
+}
+
+/* الصورة */
+.drink-card img{
+  width:110px;
+
+  height:110px;
+
+  border-radius:16px;
+
+  object-fit:cover;
+
+  order:2;
+}
+
+/* النص */
+.drink-info{
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  height:110px;
+
+  order:1;
+}
+
+/* الاسم */
+.drink-info h3{
+    font-family: 'Sultan Bold';
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 8px;
+    letter-spacing: .3px;
+
+    color: white;
+}
+
+/* السعر */
+.drink-info span{
+  color:#d8a277;
+
+  font-size:24px;
+
+  font-weight:600;
+}
+
+
+/* الخط يلي داخل انواع البوظة */
+.section-title{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+    margin-top: -25px;
+}
+
+.section-title h2{
+    color:#c28b54;
+    font-size:20px;
+    font-weight:700;
+ font-family: 'Cairo', sans-serif;
+    letter-spacing:1px;
+}
+
+.title-star{
+    color:#c28b54;
+    font-size:20px;
+}
+
+.title-line{
+    width:55px;
+    height:1px;
+
+    background:linear-gradient(
+    to right,
+    transparent,
+    rgba(194,139,84,.9),
+    transparent
+    );
+}
